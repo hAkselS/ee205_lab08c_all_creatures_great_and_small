@@ -10,5 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Animal.h"
 
+using namespace std;
+
+const string Animal::kingdom = "Animalia";
+
 Animal::Animal() {}
-//change

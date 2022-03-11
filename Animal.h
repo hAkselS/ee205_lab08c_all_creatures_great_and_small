@@ -10,9 +10,19 @@
 ///////////////////////////////////////////////////////////////////////////////
 #ifndef EE205_LAB08C_ALL_CREATURES_GREAT_AND_SMALL_ANIMAL_H
 #define EE205_LAB08C_ALL_CREATURES_GREAT_AND_SMALL_ANIMAL_H
+#include <string>
 
+enum           Gender {UNKNOWN_GENDER = 0, FEMALE =1 , MALE = 2 };
+
+const float UNKNOWN_WEIGHT = -1;
 
 class Animal {
+protected:
+    static const std::string    kingdom;
+    std::string                 species;  //required
+    enum Gender                 gender = UNKNOWN_GENDER;
+    float                       weight = UNKNOWN_WEIGHT;
+
 public:
     Animal();
 };

@@ -22,10 +22,38 @@ protected:
     std::string                 species;  //required
     enum Gender                 gender = UNKNOWN_GENDER;
     float                       weight = UNKNOWN_WEIGHT;
+//bob
+public:
+    Animal(const std::string &inSpecies);
+
 
 public:
     Animal();
+
+    Animal(const std::string &inSpecies, Gender inGender, float inWeight);
+
+    Animal(const std::string &inSpecies, Gender inGender);
+
+    Animal(const std::string &inSpecies, float inWeight);
+
+    static const std::string &getKingdom();
+
+    const std::string &getSpecies() const;
+
+    Gender getGender() const;
+
+    void setGender(Gender gender);
+
+    float getWeight() const;
+
+    void setWeight(float weight);
+
+    void printInfo();
+
+    bool isValid();
+
+
 };
-//change
+
 
 #endif //EE205_LAB08C_ALL_CREATURES_GREAT_AND_SMALL_ANIMAL_H

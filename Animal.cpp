@@ -15,3 +15,47 @@ using namespace std;
 const string Animal::kingdom = "Animalia";
 
 Animal::Animal() {}
+
+//Constructors
+Animal::Animal(const string &inSpecies) : species(inSpecies) {}
+
+Animal::Animal(const string &inSpecies, Gender inGender) : species(inSpecies), gender(inGender) {}
+
+Animal::Animal(const string &inSpecies, Gender inGender, float inWeight) : species(inSpecies), gender(inGender), weight(inWeight) {}
+
+Animal::Animal(const string &inSpecies, float inWeight) : species(inSpecies), weight(inWeight) {}
+
+//Getters
+const string &Animal::getKingdom() {
+    return kingdom;
+}
+
+const string &Animal::getSpecies() const {
+    return species;
+}
+
+//Getters and setters
+Gender Animal::getGender() const {
+    return gender;
+}
+
+void Animal::setGender(Gender gender) {
+    Animal::gender = gender;
+}
+
+float Animal::getWeight() const {
+    return weight;
+}
+
+void Animal::setWeight(float weight) {
+    Animal::weight = weight;
+}
+
+//print and validate
+void Animal::printInfo() {
+
+}
+
+bool Animal::isValid() {
+    return false;
+}

@@ -17,18 +17,20 @@ enum           Gender {UNKNOWN_GENDER = 0, FEMALE =1 , MALE = 2 };
 const float UNKNOWN_WEIGHT = -1;
 
 class Animal {
+private:
+    void setSpecies ( const std::string inSpecies );
 protected:
     static const std::string    kingdom;
     std::string                 species;  //required
     enum Gender                 gender = UNKNOWN_GENDER;
     float                       weight = UNKNOWN_WEIGHT;
-//bob
+
+    bool                        validateWeight( const float inWeight);
+    bool                        validateSpecies ( const std::string inSpecies);
+
 public:
+    //constructors
     Animal(const std::string &inSpecies);
-
-
-public:
-    Animal();
 
     Animal(const std::string &inSpecies, Gender inGender, float inWeight);
 
@@ -36,17 +38,19 @@ public:
 
     Animal(const std::string &inSpecies, float inWeight);
 
+    //getters
     static const std::string &getKingdom();
 
     const std::string &getSpecies() const;
 
     Gender getGender() const;
 
+    //setters
     void setGender(Gender gender);
 
     float getWeight() const;
 
-    void setWeight(float weight);
+    void setWeight(float inWeight);
 
     void printInfo();
 
